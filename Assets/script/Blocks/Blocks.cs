@@ -3,6 +3,8 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     public BlockType blockType;
+    public int gridX;
+    public int gridY;
     public int maxHits = 3;
     public int currentHits = 0;
 
@@ -42,6 +44,7 @@ public class Block : MonoBehaviour
     void DestroyBlock()
     {
         SpawnDrop();
+        Debug.Log("Block zerstört bei Grid-Position: X=" + gridX + " Y=" + gridY);
         Destroy(gameObject);
     }
 
